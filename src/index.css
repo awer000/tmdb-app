@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+
+  background: #735daa; /* Old browsers */
+  background: -moz-linear-gradient(
+    45deg,
+    #735daa 0%,
+    #efa2e4 55%,
+    #ffb5bd 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    45deg,
+    #735daa 0%,
+    #efa2e4 55%,
+    #ffb5bd 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #735daa 23%,
+    #efa2e4 75%,
+    #ffb5bd 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#735daa', endColorstr='#ffb5bd',GradientType=1 );
+}
+
+* {
+  box-sizing: inherit;
+}
