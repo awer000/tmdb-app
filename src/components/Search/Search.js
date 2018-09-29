@@ -25,9 +25,6 @@ class Search extends Component {
             key={value.id}
             src={`https://image.tmdb.org/t/p/w500${value.poster_path}`}
             alt="poster"
-            onClick={() => {
-              onMovieID(value.id);
-            }}
           />
         );
       });
@@ -51,7 +48,6 @@ class Search extends Component {
             확인
           </div>
         </div>
-        {pending ? <div>로딩중..</div> : <div>{dataList}</div>}
       </div>
     );
   }
