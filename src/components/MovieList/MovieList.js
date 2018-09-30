@@ -7,6 +7,7 @@ const cx = classNames.bind(styles);
 class MovieList extends Component {
   render() {
     const { pending, error, data, onMovieID } = this.props;
+
     const movieList =
       data &&
       data.map(value => (
@@ -34,6 +35,7 @@ class MovieList extends Component {
           </div>
         </div>
       ));
+
     return (
       <div className={cx("MovieList")}>
         {pending ? <div>로딩중</div> : movieList}

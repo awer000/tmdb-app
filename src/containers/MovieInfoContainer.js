@@ -1,23 +1,17 @@
 import React, { Component } from "react";
-import MovieList from "../components/MovieList/MovieList";
 import { connect } from "react-redux";
 import * as searchActions from "store/modules/search";
 import { bindActionCreators } from "redux";
+import MovieInfo from "../components/MovieInfo";
 
-class MovieListContainer extends Component {
-  handleMovieID = id => {
-    const { SearchActions } = this.props;
-    SearchActions.getMovieId(id);
-  };
+class MovieInfoContainer extends Component {
   render() {
-    const { pending, error, data } = this.props;
-
+    const { pending, error, selectedData } = this.props;
     return (
-      <MovieList
+      <MovieInfo
         pending={pending}
         error={error}
-        data={data}
-        onMovieID={this.handleMovieID}
+        selectedData={!null && selectedData}
       />
     );
   }
@@ -27,9 +21,9 @@ export default connect(
   state => ({
     pending: state.search.pending,
     error: state.search.error,
-    data: state.search.data
+    selectedData: state.search.selectedData
   }),
   dispatch => ({
     SearchActions: bindActionCreators(searchActions, dispatch)
   })
-)(MovieListContainer);
+)(MovieInfoContainer);

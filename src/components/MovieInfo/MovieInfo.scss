@@ -1,0 +1,65 @@
+.MovieInfo {
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  width: 50%;
+
+  img {
+    width: 27rem;
+    height: 40rem;
+  }
+  .info-box {
+    display: flex;
+
+    flex-direction: column;
+    height: 40rem;
+    background-color: white;
+    padding: 1rem;
+
+    .up-info {
+      h2 {
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+        margin-top: 1rem;
+      }
+      .tagline {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: steelblue;
+        padding: 0;
+        margin: 0;
+      }
+      .overview {
+        line-height: 25px;
+      }
+    }
+    .down-info {
+      .number-box {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          p {
+            margin: 0;
+            padding: 0;
+          }
+          p:nth-child(2) {
+            margin: 0;
+            padding: 0;
+            color: steelblue;
+            font-size: 1.7rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+          }
+        }
+        div + div {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
