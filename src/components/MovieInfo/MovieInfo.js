@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 class MovieInfo extends Component {
   render() {
-    const { pending, error, selectedData } = this.props;
+    const { pending, error, selectedData, onInitSelectedData } = this.props;
 
     if (!selectedData) {
       return null;
@@ -37,6 +37,9 @@ class MovieInfo extends Component {
           alt="movie-poster"
         />
         <div className={cx("info-box")}>
+          <div className={cx("close-button")} onClick={onInitSelectedData}>
+            X
+          </div>
           <div className={cx("up-info")}>
             <h2>{original_title}</h2>
             <p className={cx("tagline")}>{tagline}</p>
@@ -48,11 +51,11 @@ class MovieInfo extends Component {
             <div className={cx("number-box")}>
               <div className={cx("release-date")}>
                 <p>Release:</p>
-                <p>{release_date}</p>
+                <p>{release_date ? `${release_date}` : "-"}</p>
               </div>
               <div className={cx("runtime")}>
                 <p>Runtime:</p>
-                <p>{runtime}</p>
+                <p>{runtime ? `${runtime} min` : "-"}</p>
               </div>
               <div className={cx("vote-average")}>
                 <p>Vote Average:</p>

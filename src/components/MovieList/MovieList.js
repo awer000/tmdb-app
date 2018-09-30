@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 class MovieList extends Component {
   render() {
-    const { pending, error, data, onMovieID } = this.props;
+    const { pending, error, data, onMovieID, selectedData } = this.props;
 
     const movieList =
       data &&
@@ -27,9 +27,9 @@ class MovieList extends Component {
             <p>{`원제: ${value.original_title}`}</p>
             <p>{`내용: ${
               value.overview
-                ? value.overview.length < 200
+                ? value.overview.length < 170
                   ? value.overview
-                  : value.overview.substring(0, 200) + "..."
+                  : value.overview.substring(0, 130) + "..."
                 : "-"
             }`}</p>
           </div>

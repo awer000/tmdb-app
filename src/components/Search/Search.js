@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 class Search extends Component {
   render() {
-    const { input, onChange, onMovieName } = this.props;
+    const { input, onChange, onMovieName, onInitSelectedData } = this.props;
 
     return (
       <div className={cx("Search")}>
@@ -18,15 +18,13 @@ class Search extends Component {
             onChange={e => {
               onChange(e);
             }}
-          />
-          <div
-            className={cx("search-button")}
-            onClick={() => {
-              onMovieName(input);
+            onKeyUp={e => {
+              if (e.keyCode === 13) {
+                onMovieName(input);
+                onInitSelectedData();
+              }
             }}
-          >
-            확인
-          </div>
+          />
         </div>
       </div>
     );

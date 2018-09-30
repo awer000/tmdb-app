@@ -10,7 +10,7 @@ class MovieListContainer extends Component {
     SearchActions.getMovieId(id);
   };
   render() {
-    const { pending, error, data } = this.props;
+    const { pending, error, data, selectedData } = this.props;
 
     return (
       <MovieList
@@ -18,6 +18,7 @@ class MovieListContainer extends Component {
         error={error}
         data={data}
         onMovieID={this.handleMovieID}
+        selectedData={selectedData}
       />
     );
   }
@@ -27,7 +28,8 @@ export default connect(
   state => ({
     pending: state.search.pending,
     error: state.search.error,
-    data: state.search.data
+    data: state.search.data,
+    selectedData: state.search.selectedData
   }),
   dispatch => ({
     SearchActions: bindActionCreators(searchActions, dispatch)

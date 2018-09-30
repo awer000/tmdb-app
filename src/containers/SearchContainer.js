@@ -20,6 +20,11 @@ class SearchContainer extends Component {
     SearchActions.getMovieId(id);
   };
 
+  handleInitSelectedData = () => {
+    const { SearchActions } = this.props;
+    SearchActions.initSelectedData();
+  };
+
   render() {
     const { input, data, pending, error, selectedData } = this.props;
     return (
@@ -32,6 +37,7 @@ class SearchContainer extends Component {
         onMovieName={this.handleMovieName}
         onMovieID={this.handleMovieID}
         selectedData={selectedData}
+        onInitSelectedData={this.handleInitSelectedData}
       />
     );
   }

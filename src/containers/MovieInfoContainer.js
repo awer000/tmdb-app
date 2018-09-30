@@ -5,6 +5,11 @@ import { bindActionCreators } from "redux";
 import MovieInfo from "../components/MovieInfo";
 
 class MovieInfoContainer extends Component {
+  handleInitSelectedData = () => {
+    const { SearchActions } = this.props;
+    SearchActions.initSelectedData();
+  };
+
   render() {
     const { pending, error, selectedData } = this.props;
     return (
@@ -12,6 +17,7 @@ class MovieInfoContainer extends Component {
         pending={pending}
         error={error}
         selectedData={!null && selectedData}
+        onInitSelectedData={this.handleInitSelectedData}
       />
     );
   }
