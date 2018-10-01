@@ -9,6 +9,13 @@ class MovieListContainer extends Component {
     const { SearchActions } = this.props;
     SearchActions.getMovieId(id);
   };
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.data !== nextProps.data) {
+      return true;
+    }
+    return false;
+  }
+
   render() {
     const { pending, error, data, selectedData } = this.props;
 

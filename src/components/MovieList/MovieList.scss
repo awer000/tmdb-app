@@ -1,38 +1,56 @@
+@import "utils";
+
 .MovieList {
   position: absolute;
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   padding-bottom: 2rem;
   width: 100%;
+  height: calc(100vh - 5rem);
+  max-height: calc(100vh - 5rem);
+  // overflow: hidden;
+  overflow-y: scroll;
 
   z-index: 10;
 
-  .list {
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40rem;
-    border-radius: 7rem;
-    padding: 0.5rem;
-    padding-left: 2rem;
-    border: 0.3px solid whitesmoke;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: 0.3s;
+  ul {
+    @include media("<medium") {
+      margin-left: 6rem;
+    }
+    .list {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40rem;
 
-    img {
-      width: 5rem;
-    }
-    .movie-info {
-      width: 20rem;
-      margin: 1rem;
-    }
-    &:hover {
-      transform: scale(1.1);
+      border-radius: 7rem;
+      padding: 0.5rem;
+      // padding-left: 2rem;
+      border: 0.3px solid whitesmoke;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      @include media("<medium") {
+        width: 70%;
+        border-radius: 2rem;
+      }
+
+      img {
+        width: 5rem;
+      }
+      .movie-info {
+        width: 20rem;
+        margin: 1rem;
+      }
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: -3px 10px 60px gray;
+      }
     }
   }
   .list + .list {

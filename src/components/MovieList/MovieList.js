@@ -11,7 +11,7 @@ class MovieList extends Component {
     const movieList =
       data &&
       data.map(value => (
-        <div
+        <li
           className={cx("list")}
           key={value.id}
           onClick={() => {
@@ -33,12 +33,12 @@ class MovieList extends Component {
                 : "-"
             }`}</p>
           </div>
-        </div>
+        </li>
       ));
 
     return (
       <div className={cx("MovieList")}>
-        {pending ? <div>로딩중</div> : movieList}
+        {pending ? <div>로딩중</div> : <ul>{movieList}</ul>}
       </div>
     );
   }

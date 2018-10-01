@@ -1,71 +1,140 @@
+@import "utils";
+
 .MovieInfo {
   position: absolute;
+  width: 100%;
+  height: calc(100vh - 5rem);
   padding: 2rem;
-  padding-top: 5rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   margin: 0 auto;
-  padding-bottom: 2rem;
 
-  z-index: 20;
+  z-index: 30;
 
-  // width: 50%;
-
-  img {
-    width: 27rem;
-    height: 40rem;
+  .background {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
   }
-  .info-box {
+
+  .movie-info {
+    opacity: 0.95;
+    position: absolute;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 27rem;
+      height: 40rem;
 
-    flex-direction: column;
-    width: 35rem;
-    height: 40rem;
-    background-color: white;
-    padding: 1rem;
-
-    .up-info {
-      h2 {
-        font-size: 3rem;
-        padding: 0;
-        margin: 0;
-        margin-top: 1rem;
-      }
-      .tagline {
-        font-weight: 600;
-        font-size: 1.2rem;
-        color: steelblue;
-        padding: 0;
-        margin: 0;
-      }
-      .overview {
-        line-height: 25px;
+      @include media("<large") {
+        min-width: 15rem;
       }
     }
-    .down-info {
-      .number-box {
-        display: flex;
-        justify-content: space-between;
+    .info-box {
+      display: flex;
 
-        div {
-          p {
-            margin: 0;
-            padding: 0;
-          }
-          p:nth-child(2) {
-            margin: 0;
-            padding: 0;
-            color: steelblue;
-            font-size: 1.7rem;
-            font-weight: 300;
-            letter-spacing: -2px;
-          }
-        }
-        div + div {
-          margin-left: 1rem;
+      flex-direction: column;
+      width: 35rem;
+      height: 40rem;
+      background-color: white;
+      padding: 1rem;
+      // overflow: hidden;
+      overflow-y: scroll;
+      @include media("<large") {
+        min-width: 15rem;
+      }
+
+      .close-button {
+        display: flex;
+        justify-content: flex-end;
+        transition: 0.2s;
+
+        &:hover {
+          cursor: pointer;
+          color: pink;
         }
       }
+
+      .up-info {
+        h2 {
+          font-size: 3rem;
+          padding: 0;
+          margin: 0;
+          margin-top: 1rem;
+
+          @include media("<medium") {
+            font-size: 2rem;
+          }
+        }
+        .tagline {
+          font-weight: 600;
+          font-size: 1.2rem;
+          color: steelblue;
+          padding: 0;
+          margin-top: 0.5rem;
+        }
+        .overview {
+          line-height: 25px;
+        }
+      }
+      .down-info {
+        margin: 0;
+        margin-top: 2rem;
+        padding: 0;
+        .genres {
+          color: steelblue;
+          font-size: 1.7rem;
+          letter-spacing: -2px;
+          margin: 0;
+          padding: 0;
+
+          @include media("<medium") {
+            font-size: 1rem;
+          }
+        }
+        .company {
+          letter-spacing: -1px;
+          margin: 0;
+          margin-bottom: 2rem;
+          padding: 0;
+        }
+        .number-box {
+          display: flex;
+          justify-content: space-between;
+
+          div {
+            p {
+              margin: 0;
+              padding: 0;
+
+              @include media("<medium") {
+                font-size: 0.5rem;
+              }
+            }
+            p:nth-child(2) {
+              margin: 0;
+              padding: 0;
+              color: steelblue;
+              font-size: 1.7rem;
+              font-weight: 300;
+              letter-spacing: -2px;
+
+              @include media("<medium") {
+                font-size: 1rem;
+              }
+            }
+          }
+          div + div {
+            margin-left: 1rem;
+          }
+        }
+      }
+    }
+
+    @include media("<large") {
+      width: 70%;
     }
   }
 }
