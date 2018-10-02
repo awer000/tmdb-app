@@ -6,13 +6,12 @@ const cx = classNames.bind(styles);
 
 class MovieInfo extends Component {
   render() {
-    const { pending, error, selectedData, onInitSelectedData } = this.props;
+    const { pending, selectedData, onInitSelectedData } = this.props;
 
     if (!selectedData) {
       return null;
     }
     const {
-      backdrop_path,
       genres,
       original_title,
       overview,
@@ -40,9 +39,9 @@ class MovieInfo extends Component {
             alt="movie-poster"
           />
           <div className={cx("info-box")}>
-            {/* <div className={cx("close-button")} onClick={onInitSelectedData}>
+            <div className={cx("close-button")} onClick={onInitSelectedData}>
               X
-            </div> */}
+            </div>
             <div className={cx("up-info")}>
               <h2>{original_title}</h2>
               <p className={cx("tagline")}>{tagline}</p>

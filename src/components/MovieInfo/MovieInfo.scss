@@ -8,8 +8,37 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
+  -webkit-animation: movieInfo 0.3s ease-in;
+  -moz-animation: movieInfo 0.3s ease-in;
+  animation: movieInfo 0.3s ease-in;
 
   z-index: 30;
+
+  @-webkit-keyframes movieInfo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @-moz-keyframes movieInfo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes movieInfo {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 
   .background {
     margin: 0;

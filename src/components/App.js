@@ -4,8 +4,6 @@ import SearchContainer from "../containers/SearchContainer";
 import MovieListContainer from "../containers/MovieListContainer";
 import MovieInfoContainer from "../containers/MovieInfoContainer";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import * as searchActions from "store/modules/search";
 
 class App extends Component {
   state = {

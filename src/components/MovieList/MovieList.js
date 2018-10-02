@@ -11,7 +11,7 @@ class MovieList extends Component {
   };
 
   render() {
-    const { pending, error, data, onMovieID, selectedData } = this.props;
+    const { pending, data, onMovieID, selectedData } = this.props;
 
     const movieList =
       data &&
