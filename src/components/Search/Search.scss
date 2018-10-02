@@ -1,3 +1,5 @@
+@import "utils";
+
 .Search {
   display: flex;
   height: 5rem;
@@ -5,8 +7,13 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
+
+  @include media("<small") {
+    height: 4rem;
+  }
   .search-box {
     display: flex;
+    flex-direction: column;
     padding: 0.7rem;
     input {
       border: none;
@@ -22,6 +29,36 @@
         font-weight: 200;
         color: white;
       }
+      &:focus {
+        border-bottom: 1px solid saddlebrown;
+        -webkit-animation: animation 0.3s ease-in;
+        -moz-animation: animation 0.3s ease-in;
+        animation: animation 0.3s ease-in;
+      }
+      @-webkit-keyframes animatiion {
+        0% {
+          border-bottom: 1px solid white;
+        }
+        100% {
+          border-bottom: 1px solid saddlebrown;
+        }
+      }
+      @-moz-keyframes animatiion {
+        0% {
+          border-bottom: 1px solid white;
+        }
+        100% {
+          border-bottom: 1px solid saddlebrown;
+        }
+      }
+      @keyframes animation {
+        0% {
+          border-bottom: 1px solid white;
+        }
+        100% {
+          border-bottom: 1px solid saddlebrown;
+        }
+      }
     }
     .search-button {
       color: white;
@@ -33,6 +70,32 @@
       margin-left: 1rem;
       border-radius: 1rem;
       cursor: pointer;
+    }
+
+    .developer-info {
+      margin-top: 0.5rem;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      font-size: 0.9rem;
+
+      a {
+        text-decoration: none;
+        color: white;
+        transition: 0.5s;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+
+        &:hover {
+          color: saddlebrown;
+        }
+
+        .git-icon {
+          margin-right: 0.2rem;
+        }
+      }
     }
   }
 }

@@ -14,15 +14,16 @@ class App extends Component {
   };
 
   render() {
-    const background =
-      this.props.selectedData && this.props.selectedData.backdrop_path;
+    const background = this.props.selectedData
+      ? this.props.selectedData.backdrop_path
+      : "";
     return (
       <div
         className="App"
         style={{
-          backgroundImage: `url(https://image.tmdb.org/t/p/original${background})`,
-          backgroundSize: "cover",
-          boxShadow: "-5px -5px 30px black"
+          background: `${background &&
+            `url(https://image.tmdb.org/t/p/original${background})`}`,
+          backgroundSize: "contain"
         }}
       >
         <SearchContainer />

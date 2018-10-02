@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import styles from "./MovieList.scss";
 import classNames from "classnames/bind";
+import { ChasingDots } from "better-react-spinkit";
 
 const cx = classNames.bind(styles);
 
 class MovieList extends Component {
+  state = {
+    listHidden: false
+  };
+
   render() {
     const { pending, error, data, onMovieID, selectedData } = this.props;
 
@@ -35,10 +40,16 @@ class MovieList extends Component {
           </div>
         </li>
       ));
-
+    if (pending) {
+      return <ChasingDots />;
+    }
     return (
       <div className={cx("MovieList")}>
-        {pending ? <div>로딩중</div> : <ul>{movieList}</ul>}
+        {pending ? (
+          <ChasingDots className={cx("loader")} size={60} />
+        ) : (
+          <ul className={cx(selectedData && "selectedData")}>{movieList}</ul>
+        )}
       </div>
     );
   }

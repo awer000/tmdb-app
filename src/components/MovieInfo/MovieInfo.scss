@@ -24,12 +24,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    box-shadow: -3px 3px 20px black;
+
+    @include media("<small") {
+      flex-direction: column;
+    }
     img {
       width: 27rem;
       height: 40rem;
 
       @include media("<large") {
         min-width: 15rem;
+      }
+      @include media("<small") {
+        width: 10rem;
+        height: 20rem;
       }
     }
     .info-box {
@@ -40,10 +50,16 @@
       height: 40rem;
       background-color: white;
       padding: 1rem;
+      padding-bottom: 2rem;
       // overflow: hidden;
       overflow-y: scroll;
       @include media("<large") {
         min-width: 15rem;
+      }
+
+      @include media("<small") {
+        width: 10rem;
+        height: 13rem;
       }
 
       .close-button {
@@ -67,6 +83,9 @@
           @include media("<medium") {
             font-size: 2rem;
           }
+          @include media("<small") {
+            font-size: 1.3rem;
+          }
         }
         .tagline {
           font-weight: 600;
@@ -89,6 +108,10 @@
           letter-spacing: -2px;
           margin: 0;
           padding: 0;
+
+          @include media("<large") {
+            font-size: 1.2rem;
+          }
 
           @include media("<medium") {
             font-size: 1rem;
@@ -120,6 +143,10 @@
               font-size: 1.7rem;
               font-weight: 300;
               letter-spacing: -2px;
+
+              @include media("<large") {
+                font-size: 1.2rem;
+              }
 
               @include media("<medium") {
                 font-size: 1rem;

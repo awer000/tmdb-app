@@ -33,16 +33,16 @@ class MovieInfo extends Component {
     }
     return (
       <div className={cx("MovieInfo")}>
-        <div className={cx("background")} />
+        <div className={cx("background")} onClick={onInitSelectedData} />
         <div className={cx("movie-info")}>
           <img
             src={`https://image.tmdb.org/t/p/original${poster_path}`}
             alt="movie-poster"
           />
           <div className={cx("info-box")}>
-            <div className={cx("close-button")} onClick={onInitSelectedData}>
+            {/* <div className={cx("close-button")} onClick={onInitSelectedData}>
               X
-            </div>
+            </div> */}
             <div className={cx("up-info")}>
               <h2>{original_title}</h2>
               <p className={cx("tagline")}>{tagline}</p>

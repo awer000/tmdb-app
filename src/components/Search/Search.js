@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./Search.scss";
 import classNames from "classnames/bind";
+import { FaGithub } from "react-icons/fa";
 
 const cx = classNames.bind(styles);
 
@@ -25,6 +26,12 @@ class Search extends Component {
               }
             }}
           />
+          <div className={cx("developer-info")}>
+            <a href="https://github.com/awer000/tmdb-app">
+              <FaGithub className={cx("git-icon")} />
+              View Code
+            </a>
+          </div>
         </div>
       </div>
     );
