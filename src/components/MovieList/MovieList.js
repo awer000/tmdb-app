@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styles from "./MovieList.scss";
 import classNames from "classnames/bind";
 import { ChasingDots } from "better-react-spinkit";
+import noImg from "img/not-found-img.png";
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +25,11 @@ class MovieList extends Component {
           }}
         >
           <img
-            src={`https://image.tmdb.org/t/p/original${value.poster_path}`}
+            src={
+              value.poster_path
+                ? `https://image.tmdb.org/t/p/original${value.poster_path}`
+                : noImg
+            }
             alt="movie-poster"
           />
           <div className={cx("movie-info")}>

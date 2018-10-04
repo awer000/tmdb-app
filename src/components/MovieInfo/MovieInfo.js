@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styles from "./MovieInfo.scss";
 import classNames from "classnames/bind";
+import noImg from "img/not-found-img.png";
 
 const cx = classNames.bind(styles);
 
@@ -35,7 +36,11 @@ class MovieInfo extends Component {
         <div className={cx("background")} onClick={onInitSelectedData} />
         <div className={cx("movie-info")}>
           <img
-            src={`https://image.tmdb.org/t/p/original${poster_path}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/original${poster_path}`
+                : noImg
+            }
             alt="movie-poster"
           />
           <div className={cx("info-box")}>

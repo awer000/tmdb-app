@@ -19,7 +19,7 @@ class Search extends Component {
             onChange={e => {
               onChange(e);
             }}
-            onKeyUp={e => {
+            onKeyUp={(e = window.event) => {
               if (e.keyCode === 13) {
                 onMovieName(input);
                 onInitSelectedData();
