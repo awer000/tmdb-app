@@ -7,16 +7,13 @@ import noImg from "img/not-found-img.png";
 const cx = classNames.bind(styles);
 
 class MovieList extends Component {
-  state = {
-    listHidden: false
-  };
-
   render() {
     const { pending, data, onMovieID, selectedData } = this.props;
+    const movieData = [...new Set(data)]
 
     const movieList =
       data &&
-      data.map(value => (
+      movieData.map(value => (
         <li
           className={cx("list")}
           key={value.id}
