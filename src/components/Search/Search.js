@@ -16,7 +16,7 @@ class Search extends Component {
             placeholder="영화 제목을 입력하세요..."
             className={cx("input-name")}
             value={input}
-            onChange={e => {
+            onChange={(e = window.event) => {
               onChange(e);
             }}
             onKeyUp={e => {
