@@ -3,7 +3,6 @@ import modules from "./modules";
 import ReduxThunk from "redux-thunk";
 
 const configure = () => {
-  // const store = createStore(modules);
   const devTools =
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
     window.__REDUX_DEVTOOLS_EXTENSION__();

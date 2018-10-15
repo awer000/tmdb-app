@@ -4,6 +4,8 @@ import * as api from "lib/api";
 
 const CHANGE_INPUT = "search/CHANGE_INPUT";
 const INIT_SELECTED_DATA = "search/INIT_SELECTED_DATA";
+// 선택된 SELECTED_DATA를 초기화 해준다.
+// 영화 검색 결과를 보고 창 닫기를 누를때 사용한다.
 
 const GET_MOVIE_NAME_PENDING = "search/GET_MOVIE_NAME_PENDING";
 const GET_MOVIE_NAME_SUCCESS = "search/GET_MOVIE_NAME_SUCCESS";
